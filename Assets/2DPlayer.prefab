@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8876714134665698136}
   - component: {fileID: 2113252004838881333}
-  - component: {fileID: 1154271399877366510}
+  - component: {fileID: 5047968572029776036}
   m_Layer: 0
   m_Name: 2DPlayer
   m_TagString: Untagged
@@ -62,7 +62,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1154271399877366510
+--- !u!114 &5047968572029776036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,20 +71,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2053215296401551435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c41b4dd8a75c24f9483959e12ced2afd, type: 3}
+  m_Script: {fileID: 11500000, guid: 58a87ff9450414e4caa8868194fabd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2686949847929572381}
   controller: {fileID: 2113252004838881333}
   speed: 10
-  gravity: -12
-  dashSpeed: 300
+  gravity: -10
+  dashSpeed: 1000
   groundCheck: {fileID: 8711482279766187858}
   groundDistance: 0.4
-  dashCD: 50
+  dashCD: 0
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
 --- !u!1 &2213077200803065248
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 7927058948025326718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -10.84, y: 2.32, z: -5}
+  m_LocalPosition: {x: -10.84, y: 3.617, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

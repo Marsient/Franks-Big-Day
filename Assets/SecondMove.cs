@@ -39,7 +39,7 @@ public class SecondMove : MonoBehaviour
         //Takes the player's movement inputs
         float x = Input.GetAxis("Horizontal") * -1;
         // Moves the player based on their movememnt inputs
-        Vector3 move = transform.forward * x;
+        Vector3 move = transform.right * x;
         controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime * 2f;
         controller.Move(velocity * Time.deltaTime);
@@ -53,5 +53,6 @@ public class SecondMove : MonoBehaviour
             dashCD = 30;
             }
         }
+        Debug.Log(x);
     }
 }
