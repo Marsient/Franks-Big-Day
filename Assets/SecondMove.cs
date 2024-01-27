@@ -22,7 +22,7 @@ public class SecondMove : MonoBehaviour
         dashCD -= 1;
     }
     void Movement() {
-       //Checks if the player is on the ground
+ //Checks if the player is on the ground
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         //Resets the player's velocity if they are on the ground
         if(isGrounded && velocity.y < 0) {
@@ -37,22 +37,22 @@ public class SecondMove : MonoBehaviour
             velocity.y += gravity * Time.deltaTime * 7f;
         }
         //Takes the player's movement inputs
-        float x = Input.GetAxis("Horizontal") * -1;
+        float x = Input.GetAxis("Vertical");
+        float z = Input.GetAxis("Horizontal") * -1;
         // Moves the player based on their movememnt inputs
-        Vector3 move = transform.right * x;
+        Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime * 2f;
         controller.Move(velocity * Time.deltaTime);
         //The dash feature, although it operates more like a teleport
         if (dashCD <= 0 && Input.GetKeyDown(KeyCode.LeftShift)) {
-            if(x != 0f) {
+            if(x != 0f || z != 0f) {
                 controller.Move(move * dashSpeed * Time.deltaTime);
                 dashCD = 30;
             } else {
-            controller.Move(transform.forward * dashSpeed * Time.deltaTime * -1);
+            controller.Move(transform.forward * dashSpeed * Time.deltaTime);
             dashCD = 30;
             }
-        }
-        Debug.Log(x);
     }
+}
 }
